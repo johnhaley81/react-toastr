@@ -1,4 +1,5 @@
-# react-toastr
+# react-toastr-redux [![Travis CI][travis-image]][travis-url] [![Quality][codeclimate-image]][codeclimate-url] [![Coverage][codeclimate-coverage-image]][codeclimate-coverage-url] [![Dependencies][gemnasium-image]][gemnasium-url] [![Gitter][gitter-image]][gitter-url]
+
 > React.js toastr component
 
 [![Version][npm-image]][npm-url] [![Travis CI][travis-image]][travis-url] [![Quality][codeclimate-image]][codeclimate-url] [![Coverage][codeclimate-coverage-image]][codeclimate-coverage-url] [![Dependencies][gemnasium-image]][gemnasium-url] [![Gitter][gitter-image]][gitter-url]
@@ -7,7 +8,7 @@
 ## Installation
 
 ```sh
-npm i --save react-toastr
+npm i --save react-toastr-redux
 ```
 
 
@@ -39,7 +40,7 @@ WIP: release a UMD version via bower/components.
 Then:
 
 ```javascript
-var ReactToastr = require("react-toastr");
+var ReactToastr = require("react-toastr-redux");
 var {ToastContainer} = ReactToastr; // This is a React Element.
 // For Non ES6...
 // var ToastContainer = ReactToastr.ToastContainer;
