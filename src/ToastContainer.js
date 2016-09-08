@@ -51,19 +51,19 @@ export default class ToastContainer extends Component {
   };
 
   error(message, title, optionsOverride) {
-    this._notify(this.props.toastType.error, message, title, optionsOverride);
+    return this._notify(this.props.toastType.error, message, title, optionsOverride);
   }
 
   info(message, title, optionsOverride) {
-    this._notify(this.props.toastType.info, message, title, optionsOverride);
+    return this._notify(this.props.toastType.info, message, title, optionsOverride);
   }
 
   success(message, title, optionsOverride) {
-    this._notify(this.props.toastType.success, message, title, optionsOverride);
+    return this._notify(this.props.toastType.success, message, title, optionsOverride);
   }
 
   warning(message, title, optionsOverride) {
-    this._notify(this.props.toastType.warning, message, title, optionsOverride);
+    return this._notify(this.props.toastType.warning, message, title, optionsOverride);
   }
 
   clear() {
@@ -80,6 +80,7 @@ export default class ToastContainer extends Component {
     }
     const key = this.state.toastId++;
     const toastId = key;
+    const ref = `toasts__${key}`;
     const newToast = update(optionsOverride, {
       $merge: {
         type,
@@ -87,7 +88,7 @@ export default class ToastContainer extends Component {
         message,
         toastId,
         key,
-        ref: `toasts__${key}`,
+        ref,
         handleOnClick: (e) => {
           if (`function` === typeof optionsOverride.handleOnClick) {
             optionsOverride.handleOnClick();
@@ -110,6 +111,8 @@ export default class ToastContainer extends Component {
       messageList: messageOperation,
     });
     this.setState(nextState);
+
+    return ref;
   }
 
   _handle_toast_on_click(event) {
